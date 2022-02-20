@@ -8,6 +8,7 @@ public class Jukebox {
         item.music(2);
         item.music(3);
     }
+
     public void music(int position) {
         if (position == 1) {
             System.out.println("Пусть бегут неуклюже");
