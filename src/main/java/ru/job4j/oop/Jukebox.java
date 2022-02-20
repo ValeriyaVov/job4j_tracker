@@ -1,6 +1,7 @@
 package ru.job4j.oop;
 
 public class Jukebox {
+
     public static void main(String[] args) {
         Jukebox item = new Jukebox();
         item.music(1);
