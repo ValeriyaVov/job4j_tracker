@@ -6,7 +6,6 @@ public class Error {
         private int status;
         private String message;
 
-
         public Error() {
 
      }
@@ -33,4 +32,5 @@ public class Error {
          System.out.println("Status: " + status);
          System.out.println("Message: " + message);
      }
+
 }
