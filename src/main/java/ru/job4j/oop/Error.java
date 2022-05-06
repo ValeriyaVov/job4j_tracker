@@ -6,7 +6,7 @@ public class Error {
         private int status;
         private String message;
 
-        public Error() {
+     public Error() {
 
      }
 
@@ -27,10 +27,10 @@ public class Error {
         Error error3 = new Error();
         error3.printInfo();
     }
+
      public void printInfo() {
          System.out.println("Active: " + active);
          System.out.println("Status: " + status);
          System.out.println("Message: " + message);
      }
-
 }
