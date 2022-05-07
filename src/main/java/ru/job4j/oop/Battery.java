@@ -20,8 +20,8 @@ public class Battery {
     public static void main(String[] args) {
         Battery first = new Battery(6);
         Battery second = new Battery(3);
-        System.out.println("Battery first:" + first.load + "Battery second:" + second.load );
+        System.out.println("Battery first:" + first.load + "Battery second:" + second.load);
         second.exchange(first);
-        System.out.println("Battery first:" + first.load + "Battery second:" + second.load );
+        System.out.println("Battery first:" + first.load + "Battery second:" + second.load);
     }
 }
