@@ -1,4 +1,6 @@
-package ru.job4j.tracker;
+package ru.job4j.inheritance;
+
+import ru.job4j.inheritance.JSONReport;
 
 public class ReportUsage {
     public static void main(String[] args) {
