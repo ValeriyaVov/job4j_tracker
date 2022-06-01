@@ -30,4 +30,9 @@ public class Book {
         Book otherBook = (Book) obj;
         return otherBook.name.equals(this.name);
     }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
 }
