@@ -29,7 +29,7 @@ public class Library {
         System.out.println("Show a book with the name: \"Clean code\" ");
         for (int i = 0; i < books.length; i++) {
             Book bk = books[i];
-            if (bk.equals(cleanCode)) {
+            if ("Clean code".equals(bk.getName())) {
                 System.out.println(bk.getName() + " - " + bk.getCount());
             }
         }
