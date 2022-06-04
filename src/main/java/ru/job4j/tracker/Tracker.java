@@ -26,21 +26,13 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        int j = 0;
-        Item[] rsl = new Item[items.length];
-        for (int i = 0; i < items.length; i++) {
-            Item item = items[i];
-            rsl[j] = item;
-            j++;
-        }
-        rsl = Arrays.copyOf(rsl, j);
-                return rsl;
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
         int j = 0;
-        Item[] rsl = new Item[items.length];
-        for (int i = 0; i < items.length; i++) {
+        Item[] rsl = new Item[size];
+        for (int i = 0; i < size; i++) {
             Item item = items[i];
             if (item != null
                     && item.getName().equals(key)) {
