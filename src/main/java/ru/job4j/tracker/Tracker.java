@@ -63,9 +63,9 @@ public class Tracker {
         if (index == -1) {
             return false;
         }
-        size--;
+        System.arraycopy(items, index + 1, items, index, size - 1 - index);
         items[index] = null;
-        System.arraycopy(items, index + 1, items, index, items.length - 1 - index);
+        size--;
         return true;
     }
 }
