@@ -6,21 +6,18 @@ public class Matches {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Игра 11.");
-        System.out.println("\n");
         boolean turn = true;
         int count = 11;
         while (count > 0) {
             String player = turn ? "Первый игрок " : "Второй игрок ";
             System.out.println(player + "введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            if (matches >= 1 && matches <= 3 && !(matches > count)) {
+            if (matches >= 1 && matches <= Math.min(3, count)) {
                 turn = !turn;
                 count -= matches;
                 System.out.println("Осталось спичек:" + count);
-                System.out.println("\n");
             } else {
                 System.out.println("Введено неправильное кол-во спичек. Количество спичек должно быть от 1 до 3, но не больше отавшегося кол-ва.");
-                System.out.println("\n");
             }
         }
         if (!turn) {
