@@ -1,9 +1,19 @@
 package ru.job4j.poly;
 
-public interface Bus {
-    void drive();
+public class Bus implements Transport{
+    @Override
+    public void drive() {
 
-    void passengers(int quantity);
+    }
 
-    int refuel(int count);
+    @Override
+    public void passengers(int quantity) {
+        int count = quantity;
+    }
+
+    @Override
+    public int refuel(int count) {
+        int price = 50;
+        return price * count;
+    }
 }
