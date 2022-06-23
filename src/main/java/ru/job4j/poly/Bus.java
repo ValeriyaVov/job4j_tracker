@@ -8,7 +8,7 @@ public class Bus implements Transport, Vehicle {
 
     @Override
     public void passengers(int quantity) {
-        int count = quantity;
+        System.out.println(quantity);
     }
 
     @Override
