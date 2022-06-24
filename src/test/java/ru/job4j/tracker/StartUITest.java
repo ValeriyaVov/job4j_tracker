@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
-import org.hamcrest.core.Is;
 import org.junit.Test;
-import ru.job4j.poly.ConsoleInput;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.core.Is.*;
