@@ -6,9 +6,11 @@ public class FindEl {
         for (int i = 0; i < value.length; i++) {
             if (value[i].equals(key)) {
                 rsl = i;
-            } else {
-                throw new ElementNotFoundException("There is no such element in the array");
+                break;
             }
+        }
+        if (rsl == -1) {
+            throw new ElementNotFoundException("There is no such element in the array");
         }
         return rsl;
     }
