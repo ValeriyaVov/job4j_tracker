@@ -38,7 +38,7 @@ public class UserStore {
         } catch (UserInvalidException iv) {
             System.out.println("Пользователь не валидный");
         } catch (UserNotFoundException nf) {
-            System.out.println("Пользователя не найдено");;
+            System.out.println("Пользователя не найдено");
         }
     }
 }
