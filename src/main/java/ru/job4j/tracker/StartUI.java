@@ -1,8 +1,5 @@
 package ru.job4j.tracker;
 
-
-import ru.job4j.poly.ConsoleInput;
-
 public class StartUI {
     private final Output out;
 
@@ -42,7 +39,7 @@ public class StartUI {
                 new FindByIdAction(),
                 new FindByNameAction(),
                 new ShowAllAction(),
-                new ExitAction()
+                new ExitAction(output)
         };
         new StartUI(output).init(input, tracker, actions);
     }
