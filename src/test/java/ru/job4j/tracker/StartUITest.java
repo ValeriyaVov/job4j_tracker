@@ -68,9 +68,11 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         MatcherAssert.assertThat(out.toString(), is(
-                "Menu."
+                "Menu:"
                         + System.lineSeparator()
-                        + "0.Exit Program"
+                        + "0. Exit Program"
+                        + System.lineSeparator()
+                        + "=== Exit Program ==="
                         + System.lineSeparator()
         ));
     }
@@ -87,11 +89,13 @@ public class StartUITest {
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         MatcherAssert.assertThat(out.toString(), is(
-                "Menu." + ln
-                        + "0.Exit Program" + ln
+                "Menu:" + ln
+                        + "0. Exit Program" + ln
                         + "Wrong input, you can select: 0.. 0" + ln
-                        + "Menu." + ln
-                        + "0.Exit Program" + ln
+                        + "Menu:" + ln
+                        + "0. Exit Program" + ln
+                        + "=== Exit Program ==="
+                        + System.lineSeparator()
                 )
         );
     }
