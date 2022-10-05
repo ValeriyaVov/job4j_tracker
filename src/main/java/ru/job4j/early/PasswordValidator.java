@@ -6,7 +6,7 @@ public class PasswordValidator {
         if (password == null) {
             throw new IllegalArgumentException("Password cannot be empty");
         }
-        if (password.length() <= 7 || password.length() >= 33) {
+        if (password.length() < 8 || password.length() > 32) {
             rsl = "Password length must be in the range [8, 32]";
         }
         String[] array = {"qwerty",
@@ -20,26 +20,23 @@ public class PasswordValidator {
         boolean hasDigit = false;
         boolean hasSymbol = false;
         boolean hasSubstring = false;
-        String singleRegister = null;
 
         for (int i = 0; i < array.length; i++) {
-            singleRegister = password.toLowerCase();
+            String singleRegister = password.toLowerCase();
             if (singleRegister.contains(array[i])) {
                 hasSubstring = true;
+                break;
             }
         }
         for (int i = 0; i < password.length(); i++) {
             int p = password.charAt(i);
             if (isUpperLatinLetter(p)) {
                 hasUppercase = true;
-            }
-            if (isLowerLatinLetter(p)) {
+            } else if (isLowerLatinLetter(p)) {
                 hasLowercase = true;
-            }
-            if (Character.isDigit(p)) {
+            } else if (Character.isDigit(p)) {
                 hasDigit = true;
-            }
-            if (isSpecialSymbol(p)) {
+            } else if (isSpecialSymbol(p)) {
                 hasSymbol = true;
             }
 
@@ -51,13 +48,13 @@ public class PasswordValidator {
             rsl = "Password must contain at least one lowercase character";
         }
         if (!hasDigit) {
-            rsl = "The password must contain at least one number";
+            rsl = "Password must contain at least one number";
         }
         if (!hasSymbol) {
-            rsl = "The password must contain at least one special symbol";
+            rsl = "Password must contain at least one special symbol";
         }
         if (hasSubstring) {
-            rsl = "The password must not contain case-insensitive substrings";
+            rsl = "Password must not contain popular substrings";
         }
         return rsl;
     }

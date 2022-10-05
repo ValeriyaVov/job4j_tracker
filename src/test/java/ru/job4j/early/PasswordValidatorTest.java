@@ -18,8 +18,8 @@ public class PasswordValidatorTest {
     }
 
     @Test
-    public void whenPasswordLengthIsFive() {
-        String message = PasswordValidator.validate("Ik_01");
+    public void whenPasswordLengthIsSeven() {
+        String message = PasswordValidator.validate("Ik_01_y");
         String warning = "Password length must be in the range [8, 32]";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
@@ -58,51 +58,51 @@ public class PasswordValidatorTest {
     }
 
     @Test
-    public void whenNoOneNumber() {
+    public void whenNoNumber() {
         String message = PasswordValidator.validate("Tk_iioKrE");
-        String warning = "The password must contain at least one number";
+        String warning = "Password must contain at least one number";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 
     @Test
     public void whenNoOneSpecialSymbol() {
         String message = PasswordValidator.validate("Tk823iioKrE");
-        String warning = "The password must contain at least one special symbol";
+        String warning = "Password must contain at least one special symbol";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 
     @Test
-    public void whenPasswordContainSubstring() {
+    public void whenPasswordContainsSubstring() {
         String message = PasswordValidator.validate("adminTk823iioKrE");
-        String warning = "The password must not contain case-insensitive substrings";
+        String warning = "Password must not contain popular substrings";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 
     @Test
-    public void whenPasswordContainOnlySubstringUser() {
+    public void whenPasswordContainsSubstringUser() {
         String message = PasswordValidator.validate("po_usER$ok7");
-        String warning = "The password must not contain case-insensitive substrings";
+        String warning = "Password must not contain popular substrings";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 
     @Test
-    public void whenPasswordContainSubstringPass() {
+    public void whenPasswordContainsSubstringPass() {
         String message = PasswordValidator.validate("659_passworD");
-        String warning = "The password must not contain case-insensitive substrings";
+        String warning = "Password must not contain popular substrings";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 
     @Test
-    public void whenPasswordContainOnlySubstringQwerty() {
+    public void whenPasswordContainsSubstringQwerty() {
         String message = PasswordValidator.validate("QWERTY$8ipe");
-        String warning = "The password must not contain case-insensitive substrings";
+        String warning = "Password must not contain popular substrings";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 
     @Test
-    public void whenPasswordContainOnlySubstringNumber() {
+    public void whenPasswordContainsSubstringNumber() {
         String message = PasswordValidator.validate("12345_Kk$");
-        String warning = "The password must not contain case-insensitive substrings";
+        String warning = "Password must not contain popular substrings";
         MatcherAssert.assertThat(message, Matchers.is(warning));
     }
 }
