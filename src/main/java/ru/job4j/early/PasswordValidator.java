@@ -7,7 +7,7 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password cannot be empty");
         }
         if (password.length() < 8 || password.length() > 32) {
-            rsl = "Password length must be in the range [8, 32]";
+            throw new IllegalArgumentException("Password length must be in the range [8, 32]");
         }
         String[] array = {"qwerty",
                 "12345",
@@ -42,21 +42,21 @@ public class PasswordValidator {
 
         }
         if (!hasUppercase) {
-            rsl = "Password must contain at least one uppercase character";
+            throw new IllegalArgumentException("Password must contain at least one uppercase character");
         }
         if (!hasLowercase) {
-            rsl = "Password must contain at least one lowercase character";
+            throw new IllegalArgumentException("Password must contain at least one lowercase character");
         }
         if (!hasDigit) {
-            rsl = "Password must contain at least one number";
+            throw new IllegalArgumentException("Password must contain at least one number");
         }
         if (!hasSymbol) {
-            rsl = "Password must contain at least one special symbol";
+            throw new IllegalArgumentException("Password must contain at least one special symbol");
         }
         if (hasSubstring) {
-            rsl = "Password must not contain popular substrings";
+            throw new IllegalArgumentException("Password must not contain popular substrings");
         }
-        return rsl;
+        return "Password is valid";
     }
 
     public static boolean isUpperLatinLetter(int code) {
