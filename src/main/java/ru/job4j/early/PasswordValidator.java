@@ -39,6 +39,9 @@ public class PasswordValidator {
             } else if (isSpecialSymbol(p)) {
                 hasSymbol = true;
             }
+            if (hasUppercase && hasLowercase && hasDigit && hasSymbol) {
+                break;
+            }
 
         }
         if (!hasUppercase) {
