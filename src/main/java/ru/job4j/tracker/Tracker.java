@@ -19,16 +19,15 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        return items;
+        return List.copyOf(items);
     }
 
     public List<Item> findByName(String key) {
-        ArrayList<Item> rsl = new ArrayList<>();
-        for (int i = 0; i < items.size(); i++) {
-            Item item = items.get(i);
-            if (item.getName().equals(key)) {
-                rsl.add(item);
-            }
+        List<Item> rsl = new ArrayList<>();
+        for (Item value : items) {
+           if (value.getName().equals(key)) {
+               rsl.add(value);
+           }
         }
         return rsl;
     }
@@ -45,12 +44,13 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        boolean isDeleted = delete(id);
-        if (isDeleted) {
+        int index = indexOf(id);
+        boolean rsl = index != -1;
+        if (rsl) {
             item.setId(id);
-            items.add(item);
+            items.set(index, item);
         }
-        return isDeleted;
+        return rsl;
     }
 
     public boolean delete(int id) {
