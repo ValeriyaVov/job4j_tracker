@@ -56,16 +56,14 @@ public class AnalyzeByMap {
 
     public static Label bestStudent(List<Pupil> pupils) {
         double sc = 0;
-        int count = 0;
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
                 sc += subject.score();
-                count++;
             }
             labels.add(new Label(pupil.name(), sc));
             sc = 0;
-            count = 0;
+
         }
         labels.sort(Comparator.naturalOrder());
         return labels.get(labels.size() - 1);
