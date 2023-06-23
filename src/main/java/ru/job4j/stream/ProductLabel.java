@@ -6,7 +6,7 @@ public class ProductLabel {
     public List<String> generateLabels(List<Product> products) {
         return products.stream().filter(product -> product.getStandard() - product.getActual() < 4)
                 .filter(product -> product.getStandard() - product.getActual() >= 0)
-                .map(product -> new Label(product.getName(), product.getPrice() * 50 / 100))
+                .map(product -> new Label(product.getName(), product.getPrice() * (float)0.5))
                 .map(Label::toString)
                 .toList();
 
