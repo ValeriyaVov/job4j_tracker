@@ -7,6 +7,6 @@ public class DoubleLoop {
         Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(Value.values())
                         .map(value -> new Card(suit, value)))
-                .toList();
+                .forEach(System.out::println);
     }
 }
